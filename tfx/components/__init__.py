@@ -34,9 +34,9 @@ from tfx.components.trainer.component import Trainer
 from tfx.components.transform.component import Transform
 from tfx.components.tuner.component import Tuner
 
-# Prevents double logging: TFX and TF uses `tf.logging` but Beam uses standard
+# Prevents double logging: TFX and TF use `tf.logging` but Beam uses standard
 # logging, both logging modules add its own handler. Following setting disables
 # tf.logging to propagate up to the parent logging handlers. This is a global
-# behavior (perhaps thread hostile) which affects all code that uses component
-# libaray.
+# behavior (perhaps thread hostile) which affects all code that is using the
+# component library.
 tf.get_logger().propagate = False
